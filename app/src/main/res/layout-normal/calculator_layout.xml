@@ -20,11 +20,10 @@
         android:text="histori"
         android:textColor="@color/textViewHistoryColor"
         android:textSize="@dimen/textSizeAnswer"
-        android:weightSum="1"
-        autofit:minTextSize="8sp" />
+        android:weightSum="1" />
 
     <!-- записываетса вод юзера и вывод резултата-->
-    <me.grantland.widget.AutofitTextView
+    <TextView
         android:id="@+id/textViewInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,10 +35,9 @@
         android:text="@string/button_0"
         android:textColor="@color/text_view_input_text_color"
         android:textSize="@dimen/textSize"
-        android:weightSum="1"
-        autofit:minTextSize="8sp" />
+        android:weightSum="1" />
     <!--записываетса ответ-->
-    <me.grantland.widget.AutofitTextView
+    <TextView
 
         android:id="@+id/textViewAnswer"
         android:layout_width="match_parent"
