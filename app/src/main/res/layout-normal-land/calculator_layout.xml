@@ -228,7 +228,7 @@
     </GridLayout>
 
     <!-- записываетса история-->
-    <me.grantland.widget.AutofitTextView
+    <AutofitTextView
         android:id="@+id/textViewHistory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
