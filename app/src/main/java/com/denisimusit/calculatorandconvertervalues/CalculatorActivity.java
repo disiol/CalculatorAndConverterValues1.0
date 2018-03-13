@@ -1,18 +1,13 @@
 package com.denisimusit.calculatorandconvertervalues;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-
-import me.grantland.widget.AutofitHelper;
 
 public class CalculatorActivity extends AppCompatActivity {
     private TextView textViewInput;
@@ -124,29 +119,6 @@ public class CalculatorActivity extends AppCompatActivity {
         button_del = (Button) findViewById(R.id.button_del);
         button_interest = (Button) findViewById(R.id.button_interest);
         button_point = (Button) findViewById(R.id.button_point);
-
-
-
-        ((EditText)findViewById(R.id.textViewInput)).addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-                // do nothing
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-                textViewInput.setText(charSequence);
-                //mAutofitOutput.setText(charSequence);
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                // do nothing
-            }
-        });
-
-
-
 
 
     }
