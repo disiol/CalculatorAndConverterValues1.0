@@ -230,7 +230,7 @@
     <TextView
         android:id="@+id/textViewHistory"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/textInputHeight"
         android:layout_alignTop="@+id/gridLayout"
         android:layout_marginLeft="2dp"
         android:layout_toEndOf="@+id/gridLayout"
@@ -238,33 +238,33 @@
         android:gravity="bottom"
         android:text="histori"
         android:textColor="@android:color/holo_orange_dark"
-        android:textSize="@dimen/textSizeAnswer" />
+        android:textSize="@dimen/answer_history_text_size_land" />
 
     <!-- записываетса вод юзера и вывод резултата-->
     <TextView
         android:id="@+id/textViewInput"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/textInputHeight"
+        android:layout_alignLeft="@+id/textViewHistory"
+        android:layout_alignStart="@+id/textViewHistory"
         android:layout_below="@+id/textViewHistory"
-        android:layout_marginTop="70dp"
-        android:layout_toEndOf="@+id/gridLayout"
-        android:layout_toRightOf="@+id/gridLayout"
+        android:layout_marginTop="36dp"
         android:gravity="bottom"
         android:text="@string/button_0"
         android:textColor="@color/text_view_input_text_color"
-        android:textSize="@dimen/textSize" />
+        android:textSize="@dimen/textSize_land" />
     <!--записываетса ответ-->
     <TextView
         android:id="@+id/textViewAnswer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/textInputHeight"
         android:layout_alignBottom="@+id/gridLayout"
         android:layout_toEndOf="@+id/gridLayout"
         android:layout_toRightOf="@+id/gridLayout"
         android:gravity="bottom"
         android:text="answer"
         android:textColor="@color/textViewHistoryColor"
-        android:textSize="@dimen/textSizeAnswer" />
+        android:textSize="@dimen/answer_history_text_size_land" />
 
 
 </RelativeLayout>
