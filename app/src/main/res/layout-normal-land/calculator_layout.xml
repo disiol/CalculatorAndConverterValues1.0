@@ -239,8 +239,7 @@
         android:gravity="bottom"
         android:text="histori"
         android:textColor="@android:color/holo_orange_dark"
-        android:textSize="@dimen/textSizeAnswer"
-        autofit:minTextSize="8sp" />
+        android:textSize="@dimen/textSizeAnswer" />
 
     <!-- записываетса вод юзера и вывод резултата-->
     <TextView
