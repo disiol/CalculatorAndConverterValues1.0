@@ -256,7 +256,7 @@
         android:textColor="@color/text_view_input_text_color"
         android:textSize="@dimen/textSize" />
     <!--записываетса ответ-->
-    <me.grantland.widget.AutofitTextView
+    <TextView
         android:id="@+id/textViewAnswer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -266,8 +266,7 @@
         android:gravity="bottom"
         android:text="answer"
         android:textColor="@color/textViewHistoryColor"
-        android:textSize="@dimen/textSizeAnswer"
-        autofit:minTextSize="8sp" />
+        android:textSize="@dimen/textSizeAnswer" />
 
 
 </RelativeLayout>
