@@ -5,4 +5,7 @@
     <dimen name="layout_height_button_land">70sp</dimen>
     <dimen name="textSize">70sp</dimen>
     <dimen name="textSize_land">80sp</dimen>
+    <dimen name="marginRight">2dp</dimen>
+    <dimen name="marginLeft">2dp</dimen>
+    <dimen name="answer_history_text_size_land">40sp</dimen>
 </resources>

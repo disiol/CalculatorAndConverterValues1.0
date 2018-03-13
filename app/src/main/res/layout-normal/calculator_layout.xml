@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:autofit="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     tools:context=".CalculatorActivity">
 
     <!-- записываетса история-->
-    <TextView
+    <me.grantland.widget.AutofitTextView
+
         android:id="@+id/textViewHistory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,10 +20,11 @@
         android:text="histori"
         android:textColor="@color/textViewHistoryColor"
         android:textSize="@dimen/textSizeAnswer"
-        android:weightSum="1" />
+        android:weightSum="1"
+        autofit:minTextSize="8sp" />
 
     <!-- записываетса вод юзера и вывод резултата-->
-    <TextView
+    <me.grantland.widget.AutofitTextView
         android:id="@+id/textViewInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,9 +36,11 @@
         android:text="@string/button_0"
         android:textColor="@color/text_view_input_text_color"
         android:textSize="@dimen/textSize"
-        android:weightSum="1" />
+        android:weightSum="1"
+        autofit:minTextSize="8sp" />
     <!--записываетса ответ-->
-    <TextView
+    <me.grantland.widget.AutofitTextView
+
         android:id="@+id/textViewAnswer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,7 +52,8 @@
         android:text="answerw"
         android:textColor="@color/textViewHistoryColor"
         android:textSize="@dimen/textSizeAnswer"
-        android:weightSum="1" />
+        android:weightSum="1"
+        autofit:minTextSize="8sp" />
 
     <GridLayout
         android:id="@+id/gridLayout"
