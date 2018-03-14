@@ -20,4 +20,7 @@
     <string name="button_del"><![CDATA[<-]]></string>
     <string name="button_00">00</string>
     <string name="button_interest">%</string>
+    <string name="text_calculator">Calculator</string>
+    <string name="convector_of_values">Convector of Values</string>
+    <string name="exit_txt">Exit</string>
 </resources>
