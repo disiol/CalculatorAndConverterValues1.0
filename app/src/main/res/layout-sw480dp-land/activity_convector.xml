@@ -18,83 +18,86 @@
         android:textColor="@color/edit_text_convector_color"
         android:textSize="@dimen/convector_textSize_land" />
 
-    <GridLayout
-        android:id="@+id/GridLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/editText"
-        android:columnCount="2"
-        android:orientation="vertical"
-        android:rowCount="4">
 
-        <RadioButton
-            android:id="@+id/radioButtonHourToMinutes"
-            android:layout_width="wrap_content"
+
+        <RadioGroup
+            android:id="@+id/GridLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/radioButton_hours_to_minutes"
-            android:textColor="@color/edit_text_convector_color"
-            android:textSize="@dimen/convector_textSize_land" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editText"
+            android:columnCount="2"
+            android:orientation="vertical">
 
-        <RadioButton
-            android:id="@+id/radioButtonMinutesToHour"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/radioButton_minutes_to_hours"
-            android:textColor="@color/edit_text_convector_color"
-            android:textSize="@dimen/convector_textSize_land" />
+            <RadioButton
+                android:id="@+id/radioButtonHourToMinutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radioButton_hours_to_minutes"
+                android:textColor="@color/edit_text_convector_color"
+                android:textSize="@dimen/convector_textSize_land" />
 
-        <RadioButton
-            android:id="@+id/radioButtonCToF"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/radioButton_C_to_F"
-            android:textColor="@color/edit_text_convector_color"
-            android:textSize="@dimen/convector_textSize_land" />
+            <RadioButton
+                android:id="@+id/radioButtonMinutesToHour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/radioButton_minutes_to_hours"
+                android:textColor="@color/edit_text_convector_color"
+                android:textSize="@dimen/convector_textSize_land" />
 
-        <RadioButton
-            android:id="@+id/radioButtonFToC"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/radioButton_F_to_C"
-            android:textColor="@color/edit_text_convector_color"
-            android:textSize="@dimen/convector_textSize_land" />
+            <RadioButton
+                android:id="@+id/radioButtonCToF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radioButton_C_to_F"
+                android:textColor="@color/edit_text_convector_color"
+                android:textSize="@dimen/convector_textSize_land" />
 
-        <RadioButton
-            android:id="@+id/radioButtonSToG"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/radioButton_g_to_d"
-            android:textColor="@color/edit_text_convector_color"
-            android:textSize="@dimen/convector_textSize_land" />
+            <RadioButton
+                android:id="@+id/radioButtonFToC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radioButton_F_to_C"
+                android:textColor="@color/edit_text_convector_color"
+                android:textSize="@dimen/convector_textSize_land" />
 
-        <RadioButton
-            android:id="@+id/radioButtonGToS"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/radioButton_d_to_g"
-            android:textColor="@color/edit_text_convector_color"
-            android:textSize="@dimen/convector_textSize_land" />
+            <RadioButton
+                android:id="@+id/radioButtonSToG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radioButton_g_to_d"
+                android:textColor="@color/edit_text_convector_color"
+                android:textSize="@dimen/convector_textSize_land" />
 
-        <RadioButton
-            android:id="@+id/radioButtonKgToMg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/radioButton_Kg_to_Mg"
-            android:textColor="@color/edit_text_convector_color"
-            android:textSize="@dimen/convector_textSize_land" />
+            <RadioButton
+                android:id="@+id/radioButtonGToS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radioButton_d_to_g"
+                android:textColor="@color/edit_text_convector_color"
+                android:textSize="@dimen/convector_textSize_land" />
 
-        <RadioButton
-            android:id="@+id/radioButtonMgToKg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/radioButton_Mg_to_Kg"
-            android:textColor="@color/edit_text_convector_color"
-            android:textSize="@dimen/convector_textSize_land" />
+            <RadioButton
+                android:id="@+id/radioButtonKgToMg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radioButton_Kg_to_Mg"
+                android:textColor="@color/edit_text_convector_color"
+                android:textSize="@dimen/convector_textSize_land" />
 
-    </GridLayout>
+            <RadioButton
+                android:id="@+id/radioButtonMgToKg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radioButton_Mg_to_Kg"
+                android:textColor="@color/edit_text_convector_color"
+                android:textSize="@dimen/convector_textSize_land" />
+        </RadioGroup>
+
+
+
 
     <LinearLayout
         android:layout_width="match_parent"

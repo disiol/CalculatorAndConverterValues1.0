@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class Convector extends AppCompatActivity {
@@ -13,60 +14,68 @@ public class Convector extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_convector);
+
+        final EditText inputEditText = (EditText) findViewById(R.id.editText);
+
+
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.GridLayout);
+
+        radioGroup.clearCheck();
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                if (inputEditText.getText().length() == 0) {
+                    Toast.makeText(getApplicationContext(), R.string.text_if_edit_text_is_empty,
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
+                float inputValue = Float.parseFloat(inputEditText.getText().toString());
+
+                switch (checkedId) {
+
+                    case R.id.radioButtonGToS:
+                        inputEditText.setText(String
+                                .valueOf(convert$To₴(inputValue)));
+                        break;
+
+                    case R.id.radioButtonSToG:
+                        inputEditText.setText(String
+                                .valueOf(convert₴To$(inputValue)));
+                        break;
+
+                    case R.id.radioButtonCToF:
+                        inputEditText.setText(String
+                                .valueOf(convertCToF(inputValue)));
+                        break;
+                    case R.id.radioButtonFToC:
+                        inputEditText.setText(String
+                                .valueOf(convertFToC(inputValue)));
+                        break;
+                    case R.id.radioButtonMinutesToHour:
+                        inputEditText.setText(String
+                                .valueOf(convertMinutesToHour(inputValue)));
+                        break;
+
+                    case R.id.radioButtonHourToMinutes:
+                        inputEditText.setText(String
+                                .valueOf(convertHourToMinutes(inputValue)));
+
+                    case R.id.radioButtonKgToMg:
+                        inputEditText.setText(String
+                                .valueOf(convertKgToMg(inputValue)));
+                        break;
+                    case R.id.radioButtonMgToKg:
+                        inputEditText.setText(String
+                                .valueOf(convertMgToKg(inputValue)));
+
+                }
+            }
+        });
     }
 
-    public void onClick(View view) {
-
-        RadioButton radioButton$To₴ = (RadioButton) findViewById(R.id.radioButtonGToS);
-        RadioButton radioButton₴To$ = (RadioButton) findViewById(R.id.radioButtonSToG);
-        RadioButton radioButtonCToF = (RadioButton) findViewById(R.id.radioButtonCToF);
-        RadioButton radioButtonFToC = (RadioButton) findViewById(R.id.radioButtonFToC);
-        RadioButton radioButtonHourToMinutes = (RadioButton) findViewById(R.id.radioButtonHourToMinutes);
-        RadioButton radioButtonMinutesToHour = (RadioButton) findViewById(R.id.radioButtonMinutesToHour);
-        RadioButton radioButtonKgToMg = (RadioButton) findViewById(R.id.radioButtonKgToMg);
-        RadioButton radioButtonMgToKg = (RadioButton) findViewById(R.id.radioButtonMgToKg);
-        EditText inputEditText = (EditText) findViewById(R.id.editText);
-
-        if (inputEditText.getText().length() == 0) {
-            Toast.makeText(getApplicationContext(), R.string.text_if_edit_text_is_empty,
-                    Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        float inputValue = Float.parseFloat(inputEditText.getText().toString());
-        if (radioButton$To₴.isChecked()) {
-            inputEditText.setText(String
-                    .valueOf(convert$To₴(inputValue)));
-        }
-        if (radioButton₴To$.isChecked()) {
-            inputEditText.setText(String
-                    .valueOf(convert₴To$(inputValue)));
-        }
-        if (radioButtonCToF.isChecked()) {
-            inputEditText.setText(String
-                    .valueOf(convertCToF(inputValue)));
-        }
-        if (radioButtonFToC.isChecked()) {
-            inputEditText.setText(String
-                    .valueOf(convertFToC(inputValue)));
-        }
-        if (radioButtonMinutesToHour.isChecked()) {
-            inputEditText.setText(String
-                    .valueOf(convertMinutesToHour(inputValue)));
-        }
-        if (radioButtonHourToMinutes.isChecked()) {
-            inputEditText.setText(String
-                    .valueOf(convertHourToMinutes(inputValue)));
-        }
-        if (radioButtonKgToMg.isChecked()) {
-            inputEditText.setText(String
-                    .valueOf(convertKgToMg(inputValue)));
-        }
-        if (radioButtonMgToKg.isChecked()) {
-            inputEditText.setText(String
-                    .valueOf(convertMgToKg(inputValue)));
-        }
-    }
 
     private double convertMgToKg(float inputValue) {
         return inputValue / 1000;
