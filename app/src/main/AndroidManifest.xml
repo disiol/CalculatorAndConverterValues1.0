@@ -18,9 +18,13 @@
         </activity>
         <activity
             android:name=".Convector"
-            android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_convector"
-            android:theme="@style/AppTheme.DarkFullscreen" />
+           />
+        <activity
+            android:name=".CalculatorActivity"
+            android:label="@string/title_activity_Calculator" >
+
+        </activity>
     </application>
 
 </manifest>

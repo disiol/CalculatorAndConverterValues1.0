@@ -1,5 +1,6 @@
 package com.denisimusit.calculatorandconvertervalues;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -24,13 +25,20 @@ public class MainActivity extends AppCompatActivity {
 
 
             case R.id.buttonCalculator:
+               //стартует активити Calculator
+                Intent intentCalculator = new Intent(this, com.denisimusit.calculatorandconvertervalues.CalculatorActivity.class);
+                startActivity(intentCalculator);
 
                 break;
 
             case R.id.buttonConvectorValues:
+                //стартует активити ConvectorValues
+                Intent intentConvectorValues = new Intent(this, com.denisimusit.calculatorandconvertervalues.Convector.class);
+                startActivity(intentConvectorValues);
 
                 break;
             case R.id.buttonExit:
+                //TODO диалоговое окно о выходе
                 finish();//остонавливае приложение
                 break;
 
