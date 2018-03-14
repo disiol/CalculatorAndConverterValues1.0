@@ -22,6 +22,7 @@
     <dimen name="layout_height_v">200dp</dimen>
     <dimen name="text_view_input_v">60dp</dimen>
     <dimen name="margin">2dp</dimen>
+    <dimen name="laut_h_l">150dp</dimen>
 
 
 </resources>
