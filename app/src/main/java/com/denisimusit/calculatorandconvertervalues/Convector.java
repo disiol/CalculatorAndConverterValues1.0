@@ -2,6 +2,7 @@ package com.denisimusit.calculatorandconvertervalues;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class Convector extends AppCompatActivity {
 
@@ -9,5 +10,8 @@ public class Convector extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_convector);
+    }
+
+    public void onClick(View view) {
     }
 }
