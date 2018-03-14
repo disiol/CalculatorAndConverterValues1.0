@@ -23,4 +23,7 @@
     <string name="text_calculator">Calculator</string>
     <string name="convector_of_values">Convector of Values</string>
     <string name="exit_txt">Exit</string>
+    <string name="title_activity_convector">Convector</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

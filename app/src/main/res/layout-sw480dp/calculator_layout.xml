@@ -20,6 +20,7 @@
         android:text="histori"
         android:textColor="@color/textViewHistoryColor"
         android:textSize="@dimen/textSizeAnswer"
+        android:onClick="onClick"
         android:weightSum="1" />
 
     <!-- записываетса вод юзера и вывод резултата-->

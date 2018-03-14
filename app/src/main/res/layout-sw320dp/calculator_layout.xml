@@ -61,6 +61,7 @@
         android:layout_alignParentRight="true"
         android:columnCount="4"
         android:orientation="horizontal"
+        android:onClick="onClick"
         android:rowCount="5">
 
         <Button

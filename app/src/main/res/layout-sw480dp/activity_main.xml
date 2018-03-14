@@ -14,6 +14,7 @@
         android:layout_weight="1"
         android:background="@color/button_color_main"
         android:text="@string/text_calculator"
+        android:onClick="onClick"
         android:textSize="@dimen/button_size_text" />
 
     <Button
@@ -24,6 +25,7 @@
         android:layout_weight="1"
         android:background="@color/button_color_main"
         android:text="@string/convector_of_values"
+        android:onClick="onClick"
         android:textSize="@dimen/button_size_text" />
 
     <Button
