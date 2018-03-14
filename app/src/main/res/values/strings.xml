@@ -35,8 +35,8 @@
     <string name="radioButton_minutes_to_hours">минуты в часы</string>
     <string name="radioButton_C_to_F"><![CDATA[C --> F]]></string>
     <string name="radioButton_F_to_C"><![CDATA[F --> C]]></string>
-    <string name="radioButton_₴_to_$"><![CDATA[₴ -->$]]></string>
-    <string name="radioButton_$_to_₴"><![CDATA[$ -->₴]]></string>
+    <string name="radioButton_g_to_d"><![CDATA[₴ -->$]]></string>
+    <string name="radioButton_d_to_g"><![CDATA[$ -->₴]]></string>
     <string name="radioButton_Kg_to_Mg"><![CDATA[Kg --> Mg]]></string>
     <string name="radioButton_Mg_to_Kg"><![CDATA[Mg --> Kg]]></string>
     <string name="buttonConvert_text">Конвектировать</string>

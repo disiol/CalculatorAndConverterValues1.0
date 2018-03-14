@@ -25,14 +25,15 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/editText"
-        android:orientation="vertical"
         android:columnCount="2"
+        android:orientation="vertical"
         android:rowCount="4">
 
         <RadioButton
             android:id="@+id/radioButtonHourToMinutes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="@string/radioButton_hours_to_minutes"
             android:textColor="@color/edit_text_convector_color"
             android:textSize="@dimen/convector_textSize_land" />
@@ -64,9 +65,9 @@
 
         <RadioButton
             android:id="@+id/radioButton₴To$"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/radioButton_₴_to_$"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/radioButton_g_to_d"
             android:textColor="@color/edit_text_convector_color"
             android:textSize="@dimen/convector_textSize_land" />
 
@@ -74,7 +75,7 @@
             android:id="@+id/radioButton$To₴"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/radioButton_$_to_₴"
+            android:text="@string/radioButton_d_to_g"
             android:textColor="@color/edit_text_convector_color"
             android:textSize="@dimen/convector_textSize_land" />
 

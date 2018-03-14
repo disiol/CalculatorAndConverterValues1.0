@@ -63,7 +63,7 @@
             android:id="@+id/radioButton₴To$"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/radioButton_₴_to_$"
+            android:text="@string/radioButton_g_to_d"
             android:textColor="@color/edit_text_convector_color"
             android:textSize="@dimen/convector_edit_text_text_size" />
 
@@ -71,7 +71,7 @@
             android:id="@+id/radioButton$To₴"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/radioButton_$_to_₴"
+            android:text="@string/radioButton_d_to_g"
             android:textColor="@color/edit_text_convector_color"
             android:textSize="@dimen/convector_edit_text_text_size" />
 

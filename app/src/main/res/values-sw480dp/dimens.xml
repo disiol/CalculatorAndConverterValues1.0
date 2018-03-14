@@ -22,6 +22,6 @@
     <dimen name="margin">2dp</dimen>
     <dimen name="laut_h_l">150dp</dimen>
     <dimen name="margin_left_s">12dp</dimen>
-    <dimen name="convector_edit_text_text_size">40dp</dimen>
+    <dimen name="convector_edit_text_text_size">60dp</dimen>
     <dimen name="convector_textSize_land">35dp</dimen>
 </resources>
