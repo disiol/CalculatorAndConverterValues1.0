@@ -23,6 +23,7 @@
     <dimen name="text_view_input_v">60dp</dimen>
     <dimen name="margin">2dp</dimen>
     <dimen name="laut_h_l">150dp</dimen>
+    <dimen name="margin_left_s">12dp</dimen>
 
 
 </resources>
