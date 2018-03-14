@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="layout_height_text_view">25dp</dimen>
-    <dimen name="layout_width_button">87dp</dimen>
-    <dimen name="layout_height_button">87dp</dimen>
+    <dimen name="layout_width_button">93dp</dimen>
+    <dimen name="layout_height_button">93dp</dimen>
     <dimen name="dp">1dp</dimen>
     <dimen name="marginTextView">2dp</dimen>
     <dimen name="button_size_text">40sp</dimen>
