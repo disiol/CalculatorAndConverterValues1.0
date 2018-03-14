@@ -29,7 +29,7 @@
 <!--convector-->
     <string name="title_activity_convector">Convector</string>
     <string name="title_activity_Calculator">Calculator</string>
-    <string name="convector_edit_text_input">0</string>
+    <string name="convector_edit_text_input"></string>
     <string name="text_vew_time">Время</string>
     <string name="radioButton_hours_to_minutes">часы в минуты</string>
     <string name="radioButton_minutes_to_hours">минуты в часы</string>
@@ -41,4 +41,7 @@
     <string name="radioButton_Mg_to_Kg"><![CDATA[Mg --> Kg]]></string>
     <string name="buttonConvert_text">Конвектировать</string>
     <string name="button_clear_convectorText">Очистить</string>
+    <string name="text_if_edit_text_is_empty">Введите длину</string>
+
+
 </resources>

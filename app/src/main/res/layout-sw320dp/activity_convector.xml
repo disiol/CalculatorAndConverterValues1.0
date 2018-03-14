@@ -12,11 +12,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:clickable="true"
         android:inputType="numberDecimal|numberSigned"
         android:text="@string/convector_edit_text_input"
         android:textColor="@color/edit_text_convector_color"
-        android:textSize="@dimen/convector_edit_text_text_size"
-        android:clickable="true"/>
+        android:textSize="@dimen/convector_edit_text_text_size" />
 
     <RadioGroup
         android:id="@+id/GridLayout"
@@ -24,8 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/editText"
-        >
+        android:layout_below="@+id/editText">
 
         <RadioButton
             android:id="@+id/radioButtonHourToMinutes"
@@ -61,7 +60,7 @@
             android:textSize="@dimen/convector_edit_text_text_size" />
 
         <RadioButton
-            android:id="@+id/radioButton₴To$"
+            android:id="@+id/radioButtonSToG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/radioButton_g_to_d"
@@ -69,7 +68,7 @@
             android:textSize="@dimen/convector_edit_text_text_size" />
 
         <RadioButton
-            android:id="@+id/radioButton$To₴"
+            android:id="@+id/radioButtonGToS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/radioButton_d_to_g"
@@ -105,21 +104,23 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="bottom"
             android:layout_margin="@dimen/dp"
             android:layout_weight="1"
             android:background="@color/button_color_convector"
-            android:text="@string/buttonConvert_text"
-            android:layout_gravity="bottom"/>
+            android:onClick="onClick"
+            android:text="@string/buttonConvert_text" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="bottom"
             android:layout_margin="@dimen/dp"
             android:layout_weight="1"
             android:background="@color/button_color_convector"
-            android:text="@string/button_clear_convectorText"
-            android:layout_gravity="bottom"/>
+            android:onClick="onClick"
+            android:text="@string/button_clear_convectorText" />
     </LinearLayout>
 
 

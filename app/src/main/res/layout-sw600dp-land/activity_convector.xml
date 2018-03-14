@@ -64,7 +64,7 @@
             android:textSize="@dimen/convector_textSize_land" />
 
         <RadioButton
-            android:id="@+id/radioButton₴To$"
+            android:id="@+id/radioButtonSToG"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/radioButton_g_to_d"
@@ -72,7 +72,7 @@
             android:textSize="@dimen/convector_textSize_land" />
 
         <RadioButton
-            android:id="@+id/radioButton$To₴"
+            android:id="@+id/radioButtonGToS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/radioButton_d_to_g"
@@ -111,6 +111,7 @@
             android:layout_margin="@dimen/dp"
             android:layout_weight="1"
             android:background="@color/button_color_convector"
+            android:onClick="onClick"
             android:text="@string/buttonConvert_text" />
 
         <Button
@@ -120,6 +121,7 @@
             android:layout_margin="@dimen/dp"
             android:layout_weight="1"
             android:background="@color/button_color_convector"
+            android:onClick="onClick"
             android:text="@string/button_clear_convectorText" />
     </LinearLayout>
 
