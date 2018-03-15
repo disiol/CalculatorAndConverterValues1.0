@@ -15,11 +15,8 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
-    <style name="AppTheme.DarkFullscreen.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="AppTheme.DarkFullscreen.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
-    
-
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+    </style>
 
 </resources>

@@ -26,7 +26,7 @@
     <string name="convector_of_values">Convector of Values</string>
     <string name="exit_txt">Exit</string>
 
-<!--convector-->
+    <!--convector-->
     <string name="title_activity_convector">Convector</string>
     <string name="title_activity_Calculator">Calculator</string>
     <string name="convector_edit_text_input"></string>
