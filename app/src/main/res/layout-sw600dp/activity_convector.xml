@@ -19,7 +19,7 @@
         android:textSize="@dimen/convector_edit_text_text_size" />
 
     <RadioGroup
-        android:id="@+id/GridLayout"
+        android:id="@+id/RadioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -96,19 +96,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/GridLayout"
+        android:layout_below="@+id/RadioGroup"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/dp"
-            android:layout_weight="1"
-            android:background="@color/button_color_convector"
-            android:onClick="onClick"
-            android:text="@string/buttonConvert_text" />
 
         <Button
             android:id="@+id/button2"

@@ -2,25 +2,28 @@ package com.denisimusit.calculatorandconvertervalues;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.RadioButton;
+import android.widget.GridLayout;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class Convector extends AppCompatActivity {
+    private static final String TAG = "myLogs";//тег для лога
+    private EditText inputEditText;
+    private RadioGroup radioGroup;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_convector);
 
-        final EditText inputEditText = (EditText) findViewById(R.id.editText);
+        inputEditText = (EditText) findViewById(R.id.editText);
+        radioGroup = (RadioGroup) findViewById(R.id.RadioGroup);
 
-
-        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.GridLayout);
-
-        radioGroup.clearCheck();
+//        radioGroup.clearCheck();
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
@@ -39,37 +42,52 @@ public class Convector extends AppCompatActivity {
                     case R.id.radioButtonGToS:
                         inputEditText.setText(String
                                 .valueOf(convert$To₴(inputValue)));
+                        Log.d(TAG, "radioButtonGToS");
                         break;
 
                     case R.id.radioButtonSToG:
                         inputEditText.setText(String
                                 .valueOf(convert₴To$(inputValue)));
+                        Log.d(TAG, "radioButtonSToG");
+
                         break;
 
                     case R.id.radioButtonCToF:
                         inputEditText.setText(String
                                 .valueOf(convertCToF(inputValue)));
+                        Log.d(TAG, "radioButtonCToF");
+
                         break;
                     case R.id.radioButtonFToC:
                         inputEditText.setText(String
                                 .valueOf(convertFToC(inputValue)));
+                        Log.d(TAG, "radioButtonCToF");
+
                         break;
                     case R.id.radioButtonMinutesToHour:
                         inputEditText.setText(String
                                 .valueOf(convertMinutesToHour(inputValue)));
+                        Log.d(TAG, "radioButtonMinutesToHour");
+
                         break;
 
                     case R.id.radioButtonHourToMinutes:
                         inputEditText.setText(String
                                 .valueOf(convertHourToMinutes(inputValue)));
+                        Log.d(TAG, "radioButtonHourToMinutes");
+                        break;
 
                     case R.id.radioButtonKgToMg:
                         inputEditText.setText(String
                                 .valueOf(convertKgToMg(inputValue)));
+                        Log.d(TAG, "radioButtonKgToMg");
+
                         break;
                     case R.id.radioButtonMgToKg:
                         inputEditText.setText(String
                                 .valueOf(convertMgToKg(inputValue)));
+                        Log.d(TAG, "radioButtonMgToKg");
+                        break;
 
                 }
             }
@@ -94,12 +112,12 @@ public class Convector extends AppCompatActivity {
         return inputValue / 60;
     }
 
-    private float convertFToC(float inputValue) {
-        return (float) ((inputValue - 32) / 1.8);
+    private double convertFToC(float inputValue) {
+        return (inputValue - 32) / 1.8;
     }
 
-    private float convertCToF(float inputValue) {
-        return (float) ((inputValue * 1.8) + 32);
+    private double convertCToF(float inputValue) {
+        return (inputValue * 1.8) + 32;
     }
 
     private double convert₴To$(float inputValue) {
@@ -108,5 +126,11 @@ public class Convector extends AppCompatActivity {
 
     private double convert$To₴(float inputValue) {
         return inputValue * 26.4282;
+    }
+
+    public void onClick(View view) {
+        inputEditText.setText("");
+        radioGroup.clearCheck();// очищает выбор
+
     }
 }
