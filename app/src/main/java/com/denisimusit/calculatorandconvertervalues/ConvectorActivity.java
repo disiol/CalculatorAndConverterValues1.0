@@ -23,7 +23,7 @@ public class ConvectorActivity extends AppCompatActivity {
         inputEditText = (EditText) findViewById(R.id.editText);
         radioGroup = (RadioGroup) findViewById(R.id.RadioGroup);
 
-//        radioGroup.clearCheck();
+        radioGroup.clearCheck();
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
@@ -41,13 +41,13 @@ public class ConvectorActivity extends AppCompatActivity {
 
                     case R.id.radioButtonGToS:
                         inputEditText.setText(String
-                                .valueOf(convert$To₴(inputValue)));
+                                .valueOf(convert₴To$(inputValue)));
                         Log.d(TAG, "radioButtonGToS");
                         break;
 
                     case R.id.radioButtonSToG:
                         inputEditText.setText(String
-                                .valueOf(convert₴To$(inputValue)));
+                                .valueOf(convert$To₴(inputValue)));
                         Log.d(TAG, "radioButtonSToG");
 
                         break;
@@ -125,7 +125,7 @@ public class ConvectorActivity extends AppCompatActivity {
     }
 
     private double convert$To₴(float inputValue) {
-        return inputValue * 26.4282;
+        return inputValue / 26.4282;
     }
 
     public void onClick(View view) {
