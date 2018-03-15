@@ -27,7 +27,7 @@
         </intent-filter>
     </activity>
     <activity
-        android:name=".Convector"
+        android:name=".ConvectorActivity"
         android:label="@string/title_activity_convector" />
     <activity
         android:name=".CalculatorActivity"

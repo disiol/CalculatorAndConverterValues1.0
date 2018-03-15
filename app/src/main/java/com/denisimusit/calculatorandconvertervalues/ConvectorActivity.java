@@ -9,7 +9,7 @@ import android.widget.GridLayout;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class Convector extends AppCompatActivity {
+public class ConvectorActivity extends AppCompatActivity {
     private static final String TAG = "myLogs";//тег для лога
     private EditText inputEditText;
     private RadioGroup radioGroup;

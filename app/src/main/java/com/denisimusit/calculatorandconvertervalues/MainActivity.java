@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.buttonConvectorValues:
                 //стартует активити ConvectorValues
-                Intent intentConvectorValues = new Intent(this, com.denisimusit.calculatorandconvertervalues.Convector.class);
+                Intent intentConvectorValues = new Intent(this, ConvectorActivity.class);
                 startActivity(intentConvectorValues);
 
                 break;
