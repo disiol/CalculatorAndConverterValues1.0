@@ -251,7 +251,9 @@ public class CalculatorActivity extends AppCompatActivity {
                 break;
             case R.id.button_del:
                 input = textViewInput.getText().toString();
-                textViewInput.setText(input.substring(0, input.length() - 1));
+                if (input.length() != 0) {
+                    textViewInput.setText(input.substring(0, input.length() - 1));
+                }
                 //TODO
                 break;
 
