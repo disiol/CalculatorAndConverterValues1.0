@@ -120,6 +120,9 @@ public class CalculatorActivity extends AppCompatActivity {
         button_interest = (Button) findViewById(R.id.button_interest);
         button_point = (Button) findViewById(R.id.button_point);
 
+        number1 = 0;
+        number2 = 0;
+
 
     }
 
@@ -136,36 +139,36 @@ public class CalculatorActivity extends AppCompatActivity {
             case R.id.button_0:
 
                 clearIfEqualsZero();
-                clearCalcDisplay = DONT_CLEAR;
                 textViewInput.append("0");
                 input += 0;
+                histori += 0;
                 break;
 
             case R.id.button_00:
 
                 clearIfEqualsZero();
 
-                clearCalcDisplay = DONT_CLEAR;
                 textViewInput.append("00");
                 input += 00;
+                histori += 00;
 
                 break;
 
             case R.id.button_1:
                 clearIfEqualsZero();
-
-                clearCalcDisplay = DONT_CLEAR;
                 textViewInput.append("1");// добовляет 1 к  textViewInput
                 input += 1;
+                histori += 1;
+
                 break;
 
             case R.id.button_2:
 
                 clearIfEqualsZero();
 
-                clearCalcDisplay = DONT_CLEAR;
                 textViewInput.append("2");
                 input += 2;
+                histori += 2;
 
                 break;
 
@@ -173,71 +176,77 @@ public class CalculatorActivity extends AppCompatActivity {
 
                 clearIfEqualsZero();
 
-                clearCalcDisplay = DONT_CLEAR;
                 textViewInput.append("3");
+
                 input += 3;
+                histori += 3;
+
                 break;
 
             case R.id.button_4:
 
                 clearIfEqualsZero();
 
-                clearCalcDisplay = DONT_CLEAR;
+
                 textViewInput.append("4");
+
                 input += 4;
+                histori += 4;
                 break;
 
             case R.id.button_5:
 
                 clearIfEqualsZero();
 
-                clearCalcDisplay = DONT_CLEAR;
                 textViewInput.append("5");
+
                 input += 5;
+                histori += 5;
                 break;
 
             case R.id.button_6:
 
                 clearIfEqualsZero();
 
-                clearCalcDisplay = DONT_CLEAR;
                 textViewInput.append("6");
                 input += 6;
+                histori += 6;
                 break;
 
             case R.id.button_7:
 
                 clearIfEqualsZero();
 
-                clearCalcDisplay = DONT_CLEAR;
                 textViewInput.append("7");
                 input += 7;
+                histori += 7;
                 break;
 
             case R.id.button_8:
 
                 clearIfEqualsZero();
 
-                clearCalcDisplay = DONT_CLEAR;
                 textViewInput.append("8");
                 input += 8;
+                histori += 8;
                 break;
 
             case R.id.button_9:
 
                 clearIfEqualsZero();
 
-                clearCalcDisplay = DONT_CLEAR;
                 textViewInput.append("9");
                 input += 9;
+                histori += 9;
                 break;
             case R.id.button_point:
 
 
-                clearCalcDisplay = DONT_CLEAR;
                 textViewInput.append(".");
                 if (input != "") {
                     input += ".";
+                    histori += ".";
+
                 }
                 break;
 
@@ -247,22 +256,26 @@ public class CalculatorActivity extends AppCompatActivity {
                 textViewHistory.setText("");
                 textViewAnswer.setText("");
                 input = "";
+                histori = "";
+                answer = "";
 
                 break;
             case R.id.button_del:
                 input = textViewInput.getText().toString();
                 if (input.length() != 0) {
                     textViewInput.setText(input.substring(0, input.length() - 1));
+                    input = textViewInput.getText().toString();
+                    histori = input;
                 }
                 //TODO
                 break;
 
             case R.id.button_plus:
-                if (textViewInput.length() != 0) {
+                if (input.length() != 0) {
                     calcLogic(ADD);
                 }
                 textViewInput.append("+");
-                input = "";
+                histori += "+";
 
                 Log.d(TAG, "Нажата кнопка +");
                 break;
@@ -273,7 +286,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
                 }
                 textViewInput.append("-");
-                input = "";
+                histori += "-";
 
                 Log.d(TAG, "Нажата кнопка -");
                 break;
@@ -283,7 +296,7 @@ public class CalculatorActivity extends AppCompatActivity {
                     calcLogic(DIVISION);
                 }
                 textViewInput.append("/");
-                input = "";
+                histori = "+";
 
 
                 Log.d(TAG, "Нажата кнопка /");
@@ -296,30 +309,25 @@ public class CalculatorActivity extends AppCompatActivity {
 
                 textViewInput.append("*");
 
-                input = "";
+                histori = "*";
 
                 Log.d(TAG, "Нажата кнопка *");
                 break;
 
             case R.id.button_equals:
                 Log.d(TAG, "Нажата кнопка =");
+                try {
 
-                textViewHistory.append(textViewInput.getText().toString() + " = "
-                        + textViewAnswer.getText().toString() + "\n");
-                textViewInput.setText(textViewAnswer.getText().toString());
-                input = "";
+                    if (textViewInput.getText().length() != 0) {
 
-
-                if (textViewInput.getText().length() != 0) {
-                    try {
                         calcLogic(EQUALS);
-                    } catch (Exception e) {
-                        textViewAnswer.setText("Oшибка!");
-                        Log.e(TAG, "ошибка: " + e);
                     }
-
-
+                } catch (Exception e) {
+                    textViewAnswer.setText("Oшибка!");
+                    Log.e(TAG, "ошибка: " + e);
                 }
+
+
                 break;
 
 
@@ -327,6 +335,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 break;
 
         }
+
     }
 
 
@@ -348,11 +357,13 @@ public class CalculatorActivity extends AppCompatActivity {
 
     /*Функция расчета введенных значений*/
     private void calcLogic(int operator) {
-        if (input != "") {
-            result.add(Float.valueOf(input));
-        }
+
 
         try {
+
+            if (input != "") {
+                result.add(Float.valueOf(input));
+            }
 
             if (operator != EQUALS) {
                 nextOperation = operator;
@@ -368,10 +379,14 @@ public class CalculatorActivity extends AppCompatActivity {
                     number2 = result.get(1);
 
                     result.removeAll(result);
-
                     result.add(number1 + number2);
-                    textViewAnswer.setText(String.format("%.0f", result.get(0)));
 
+                    answer = String.format("%.0f", result.get(0));
+
+                    input = "";
+                    input = answer;
+                    textViewAnswer.setText(answer);
+                    answer = "";
                     break;
 
           /*Вычитание*/
@@ -383,7 +398,8 @@ public class CalculatorActivity extends AppCompatActivity {
 
                     result.add(number1 - number2);
 
-                    textViewAnswer.setText(String.format("%.0f", result.get(0)));
+                    answer = String.format("%.0f", result.get(0));
+                    textViewAnswer.setText(answer);
                     break;
 
           /*Умножение*/
@@ -395,7 +411,8 @@ public class CalculatorActivity extends AppCompatActivity {
 
                     result.add(number1 * number2);
 
-                    textViewAnswer.setText(String.format("%.0f", result.get(0)));
+                    answer = String.format("%.0f", result.get(0));
+                    textViewAnswer.setText(answer);
                     break;
            /*Деление*/
                 case DIVISION:
@@ -406,17 +423,27 @@ public class CalculatorActivity extends AppCompatActivity {
 
                     result.add(number1 / number2);
 
-                    textViewAnswer.setText(String.format("%.0f", result.get(0)));
+                    answer = String.format("%.0f", result.get(0));
+                    textViewAnswer.setText(answer);
                     break;
             }
 
 
-            clearCalcDisplay = CLEAR;
+//            clearCalcDisplay = CLEAR;
             currentOperation = nextOperation;
             if (operator == EQUALS) {
                 number1 = 0;
                 number2 = 0;
+                answer = String.format("%.0f", result.get(0));
+                textViewAnswer.setText("");
+                histori += " = " + answer + "\n";
+                textViewHistory.append(histori);
+                textViewInput.setText(answer);
                 result.removeAll(result);
+                input = "";
+                answer = "";
+                //  answer = "";
+
             }
         } catch (Exception e) {
             e.printStackTrace();

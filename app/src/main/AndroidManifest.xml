@@ -10,28 +10,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.DarkFullscreen">
         <activity
-        android:name=".SplashScreenActivity"
-        android:theme="@style/SplashTheme">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:name=".SplashScreenActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
-    <activity android:name=".MainActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ConvectorActivity"
+            android:label="@string/title_activity_convector" />
+        <activity
+            android:name=".CalculatorActivity"
+            android:label="@string/title_activity_Calculator" />
+    </application>
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
-    <activity
-        android:name=".ConvectorActivity"
-        android:label="@string/title_activity_convector" />
-    <activity
-        android:name=".CalculatorActivity"
-        android:label="@string/title_activity_Calculator" />
-</application>
-
-    </manifest>
+</manifest>
