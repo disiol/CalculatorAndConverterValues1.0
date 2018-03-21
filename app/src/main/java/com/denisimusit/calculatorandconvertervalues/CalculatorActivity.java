@@ -35,10 +35,6 @@ public class CalculatorActivity extends AppCompatActivity {
     private Button button_interest;
     private Button button_point;
 
-    private String histori;//записываетса история
-    private String input = "";//записываетса вод
-    private String answer;//записываетса ответ
-
 
     /**
      * Результат который заносится в масив для обработки
@@ -89,7 +85,19 @@ public class CalculatorActivity extends AppCompatActivity {
     int clearCalcDisplay = 0;
 
     private static final String TAG = "myLogs";//тег для лога
-    private static final int TIME = 3000;
+
+
+    private String history;//записываетса история
+    private String input = "";//записываетса вод
+    private String answer;//записываетса ответ
+
+
+    // ключи для сохранеия состояния переменых
+    private static final String KEY_HISTORY = "HISTORY";
+    private static final String KEY_INPUT = "INPUT";
+    private static final String KEY_ANSWER = "ANSWER";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,15 +128,34 @@ public class CalculatorActivity extends AppCompatActivity {
         button_interest = (Button) findViewById(R.id.button_interest);
         button_point = (Button) findViewById(R.id.button_point);
 
-        number1 = 0;
-        number2 = 0;
+
+        if (savedInstanceState != null) {
+            answer = savedInstanceState.getString(KEY_ANSWER, String.valueOf(0));
+            textViewAnswer.setText(answer);
+
+            input = savedInstanceState.getString(KEY_INPUT, String.valueOf(0));
+            textViewInput.setText(input);
+
+            history = savedInstanceState.getString(KEY_HISTORY, String.valueOf(0));
+            textViewHistory.setText(history);
+        }
 
 
+    }
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(KEY_ANSWER, answer);
+        outState.putString(KEY_INPUT, input);
+        outState.putString(KEY_HISTORY, history);
     }
 
     //обробатываем нажатия кнопок
 
     public void onClick(View view) {
+
         //TODO history
         Log.d(TAG, "Оброботаем нажатие кнопки"); //выводит лог в Logcat
 //        CharSequence text = textViewInput.getText();
@@ -141,7 +168,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 clearIfEqualsZero();
                 textViewInput.append("0");
                 input += 0;
-                histori += 0;
+                history += 0;
                 break;
 
             case R.id.button_00:
@@ -150,7 +177,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
                 textViewInput.append("00");
                 input += 00;
-                histori += 00;
+                history += 00;
 
                 break;
 
@@ -158,7 +185,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 clearIfEqualsZero();
                 textViewInput.append("1");// добовляет 1 к  textViewInput
                 input += 1;
-                histori += 1;
+                history += 1;
 
                 break;
 
@@ -168,7 +195,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
                 textViewInput.append("2");
                 input += 2;
-                histori += 2;
+                history += 2;
 
                 break;
 
@@ -179,7 +206,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 textViewInput.append("3");
 
                 input += 3;
-                histori += 3;
+                history += 3;
 
                 break;
 
@@ -191,7 +218,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 textViewInput.append("4");
 
                 input += 4;
-                histori += 4;
+                history += 4;
                 break;
 
             case R.id.button_5:
@@ -201,7 +228,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 textViewInput.append("5");
 
                 input += 5;
-                histori += 5;
+                history += 5;
                 break;
 
             case R.id.button_6:
@@ -210,7 +237,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
                 textViewInput.append("6");
                 input += 6;
-                histori += 6;
+                history += 6;
                 break;
 
             case R.id.button_7:
@@ -219,7 +246,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
                 textViewInput.append("7");
                 input += 7;
-                histori += 7;
+                history += 7;
                 break;
 
             case R.id.button_8:
@@ -228,7 +255,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
                 textViewInput.append("8");
                 input += 8;
-                histori += 8;
+                history += 8;
                 break;
 
             case R.id.button_9:
@@ -237,7 +264,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
                 textViewInput.append("9");
                 input += 9;
-                histori += 9;
+                history += 9;
                 break;
             case R.id.button_point:
 
@@ -245,7 +272,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 textViewInput.append(".");
                 if (input != "") {
                     input += ".";
-                    histori += ".";
+                    history += ".";
 
                 }
                 break;
@@ -256,7 +283,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 textViewHistory.setText("");
                 textViewAnswer.setText("");
                 input = "";
-                histori = "";
+                history = "";
                 answer = "";
 
                 break;
@@ -265,7 +292,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 if (input.length() != 0) {
                     textViewInput.setText(input.substring(0, input.length() - 1));
                     input = textViewInput.getText().toString();
-                    histori = input;
+                    history = input;
                 }
                 //TODO
                 break;
@@ -275,7 +302,7 @@ public class CalculatorActivity extends AppCompatActivity {
                     calcLogic(ADD);
                 }
                 textViewInput.append("+");
-                histori += "+";
+                history += "+";
 
                 Log.d(TAG, "Нажата кнопка +");
                 break;
@@ -286,7 +313,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
                 }
                 textViewInput.append("-");
-                histori += "-";
+                history += "-";
 
                 Log.d(TAG, "Нажата кнопка -");
                 break;
@@ -296,7 +323,7 @@ public class CalculatorActivity extends AppCompatActivity {
                     calcLogic(DIVISION);
                 }
                 textViewInput.append("/");
-                histori = "+";
+                history = "+";
 
 
                 Log.d(TAG, "Нажата кнопка /");
@@ -309,7 +336,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
                 textViewInput.append("*");
 
-                histori = "*";
+                history = "*";
 
                 Log.d(TAG, "Нажата кнопка *");
                 break;
@@ -436,8 +463,8 @@ public class CalculatorActivity extends AppCompatActivity {
                 number2 = 0;
                 answer = String.format("%.0f", result.get(0));
                 textViewAnswer.setText("");
-                histori += " = " + answer + "\n";
-                textViewHistory.append(histori);
+                history += " = " + answer + "\n";
+                textViewHistory.append(history);
                 textViewInput.setText(answer);
                 result.removeAll(result);
                 input = "";
