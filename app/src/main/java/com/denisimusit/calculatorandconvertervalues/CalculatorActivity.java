@@ -98,7 +98,6 @@ public class CalculatorActivity extends AppCompatActivity {
     private static final String KEY_ANSWER = "ANSWER";
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -161,7 +160,6 @@ public class CalculatorActivity extends AppCompatActivity {
 //        CharSequence text = textViewInput.getText();
 
         switch (view.getId()) {
-
 
 
             case R.id.button_0:
@@ -315,6 +313,11 @@ public class CalculatorActivity extends AppCompatActivity {
                 //TODO
                 break;
 
+            case R.id.button_Clear:
+                clearAll();
+
+                break;
+
             case R.id.button_plus:
                 if (input.length() != 0) {
                     calcLogic(ADD);
@@ -418,7 +421,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
             switch (currentOperation) {
 
-        /*Прибавление*/
+                /*Прибавление*/
                 case ADD:
                     number1 = result.get(0);
                     number2 = result.get(1);
@@ -434,7 +437,7 @@ public class CalculatorActivity extends AppCompatActivity {
                     answer = "";
                     break;
 
-          /*Вычитание*/
+                /*Вычитание*/
                 case SUBTRACT:
                     number1 = result.get(0);
                     number2 = result.get(1);
@@ -447,7 +450,7 @@ public class CalculatorActivity extends AppCompatActivity {
                     textViewAnswer.setText(answer);
                     break;
 
-          /*Умножение*/
+                /*Умножение*/
                 case MULTIPLY:
                     number1 = result.get(0);
                     number2 = result.get(1);
@@ -459,7 +462,7 @@ public class CalculatorActivity extends AppCompatActivity {
                     answer = String.format("%.0f", result.get(0));
                     textViewAnswer.setText(answer);
                     break;
-           /*Деление*/
+                /*Деление*/
                 case DIVISION:
                     number1 = result.get(0);
                     number2 = result.get(1);
@@ -481,7 +484,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 number2 = 0;
                 answer = String.format("%.0f", result.get(0));
                 textViewAnswer.setText("");
-                history += " = " +" "+ answer + "\n";
+                history += " = " + " " + answer + "\n";
                 textViewHistory.append(history);
                 textViewInput.setText(answer);
                 result.clear();
@@ -496,14 +499,14 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
 
-    private void paused(int time) {
-
-        try {
-            Thread.sleep(time);
-        } catch (InterruptedException e) {
-            Log.e(TAG, "ошибка: " + e);
-        }
-
+    private void clearAll() {
+        result.clear();
+        textViewInput.setText("0");
+        textViewHistory.setText("");
+        textViewAnswer.setText("");
+        input = "";
+        history = "";
+        answer = "";
     }
 
 
