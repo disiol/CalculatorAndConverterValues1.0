@@ -19,7 +19,7 @@
         android:padding="@dimen/margin"
         android:layout_marginLeft="@dimen/margin_left_s"
         android:layout_marginStart="@dimen/margin_left_s"
-        android:text="histori"
+        android:text="@string/history"
         android:textColor="@color/textViewHistoryColor"
         android:textSize="@dimen/textSizeAnswer"
         android:weightSum="1" />
@@ -48,7 +48,7 @@
         android:layout_alignLeft="@+id/textViewHistory"
         android:layout_alignStart="@+id/textViewHistory"
         android:gravity="bottom"
-        android:text="answerw"
+        android:text="@string/answer"
         android:textColor="@color/textViewHistoryColor"
         android:textSize="@dimen/textSizeAnswer" />
 

@@ -463,7 +463,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 number2 = 0;
                 answer = String.format("%.0f", result.get(0));
                 textViewAnswer.setText("");
-                history += " = " + answer + "\n";
+                history += " = " +" "+ answer + "\n";
                 textViewHistory.append(history);
                 textViewInput.setText(answer);
                 result.removeAll(result);

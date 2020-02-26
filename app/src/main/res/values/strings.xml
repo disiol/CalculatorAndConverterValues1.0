@@ -42,6 +42,8 @@
     <string name="buttonConvert_text">Конвектировать</string>
     <string name="button_clear_convectorText">Очистить</string>
     <string name="text_if_edit_text_is_empty">Введите длину</string>
+    <string name="history">history:</string>
+    <string name="answer">answer:</string>
 
 
 </resources>
