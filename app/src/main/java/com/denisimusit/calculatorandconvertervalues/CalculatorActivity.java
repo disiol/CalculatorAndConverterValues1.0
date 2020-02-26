@@ -482,12 +482,18 @@ public class CalculatorActivity extends AppCompatActivity {
             if (operator == EQUALS) {
                 number1 = 0;
                 number2 = 0;
-                answer = String.format("%.0f", result.get(0));
+
+                Float answerFloat = result.get(0);
+
+                answer = String.format("%.0f", answerFloat);
                 textViewAnswer.setText("");
                 history += " = " + " " + answer + "\n";
                 textViewHistory.append(history);
                 textViewInput.setText(answer);
                 result.clear();
+
+                result.add(answerFloat);
+
                 input = "";
                 answer = "";
                 //  answer = "";
