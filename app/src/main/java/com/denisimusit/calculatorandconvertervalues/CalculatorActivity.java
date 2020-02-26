@@ -163,12 +163,15 @@ public class CalculatorActivity extends AppCompatActivity {
         switch (view.getId()) {
 
 
+
             case R.id.button_0:
 
                 clearIfEqualsZero();
                 textViewInput.append("0");
                 input += 0;
                 history += 0;
+                result.add(Float.valueOf("0"));
+
                 break;
 
             case R.id.button_00:
@@ -178,6 +181,8 @@ public class CalculatorActivity extends AppCompatActivity {
                 textViewInput.append("00");
                 input += 00;
                 history += 00;
+                result.add(Float.valueOf("00"));
+
 
                 break;
 
@@ -186,6 +191,8 @@ public class CalculatorActivity extends AppCompatActivity {
                 textViewInput.append("1");// добовляет 1 к  textViewInput
                 input += 1;
                 history += 1;
+                result.add(Float.valueOf("1"));
+
 
                 break;
 
@@ -196,7 +203,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 textViewInput.append("2");
                 input += 2;
                 history += 2;
-
+                result.add(Float.valueOf("2"));
                 break;
 
             case R.id.button_3:
@@ -207,6 +214,9 @@ public class CalculatorActivity extends AppCompatActivity {
 
                 input += 3;
                 history += 3;
+
+                result.add(Float.valueOf("3"));
+
 
                 break;
 
@@ -219,6 +229,9 @@ public class CalculatorActivity extends AppCompatActivity {
 
                 input += 4;
                 history += 4;
+
+                result.add(Float.valueOf("4"));
+
                 break;
 
             case R.id.button_5:
@@ -229,6 +242,9 @@ public class CalculatorActivity extends AppCompatActivity {
 
                 input += 5;
                 history += 5;
+
+                result.add(Float.valueOf("5"));
+
                 break;
 
             case R.id.button_6:
@@ -238,6 +254,9 @@ public class CalculatorActivity extends AppCompatActivity {
                 textViewInput.append("6");
                 input += 6;
                 history += 6;
+
+                result.add(Float.valueOf("6"));
+
                 break;
 
             case R.id.button_7:
@@ -247,6 +266,9 @@ public class CalculatorActivity extends AppCompatActivity {
                 textViewInput.append("7");
                 input += 7;
                 history += 7;
+
+                result.add(Float.valueOf("7"));
+
                 break;
 
             case R.id.button_8:
@@ -256,6 +278,9 @@ public class CalculatorActivity extends AppCompatActivity {
                 textViewInput.append("8");
                 input += 8;
                 history += 8;
+
+                result.add(Float.valueOf("8"));
+
                 break;
 
             case R.id.button_9:
@@ -265,6 +290,9 @@ public class CalculatorActivity extends AppCompatActivity {
                 textViewInput.append("9");
                 input += 9;
                 history += 9;
+
+                result.add(Float.valueOf("9"));
+
                 break;
             case R.id.button_point:
 
@@ -273,20 +301,10 @@ public class CalculatorActivity extends AppCompatActivity {
                 if (input != "") {
                     input += ".";
                     history += ".";
-
+//TODO
                 }
                 break;
 
-            case R.id.button_Clear:
-                result.removeAll(result);
-                textViewInput.setText("0");
-                textViewHistory.setText("");
-                textViewAnswer.setText("");
-                input = "";
-                history = "";
-                answer = "";
-
-                break;
             case R.id.button_del:
                 input = textViewInput.getText().toString();
                 if (input.length() != 0) {
@@ -405,7 +423,7 @@ public class CalculatorActivity extends AppCompatActivity {
                     number1 = result.get(0);
                     number2 = result.get(1);
 
-                    result.removeAll(result);
+                    result.clear();
                     result.add(number1 + number2);
 
                     answer = String.format("%.0f", result.get(0));
@@ -421,7 +439,7 @@ public class CalculatorActivity extends AppCompatActivity {
                     number1 = result.get(0);
                     number2 = result.get(1);
 
-                    result.removeAll(result);
+                    result.clear();
 
                     result.add(number1 - number2);
 
@@ -434,7 +452,7 @@ public class CalculatorActivity extends AppCompatActivity {
                     number1 = result.get(0);
                     number2 = result.get(1);
 
-                    result.removeAll(result);
+                    result.clear();
 
                     result.add(number1 * number2);
 
@@ -446,7 +464,7 @@ public class CalculatorActivity extends AppCompatActivity {
                     number1 = result.get(0);
                     number2 = result.get(1);
 
-                    result.removeAll(result);
+                    result.clear();
 
                     result.add(number1 / number2);
 
@@ -466,7 +484,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 history += " = " +" "+ answer + "\n";
                 textViewHistory.append(history);
                 textViewInput.setText(answer);
-                result.removeAll(result);
+                result.clear();
                 input = "";
                 answer = "";
                 //  answer = "";
